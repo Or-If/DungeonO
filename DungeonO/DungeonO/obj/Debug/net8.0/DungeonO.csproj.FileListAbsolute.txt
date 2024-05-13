@@ -1,0 +1,14 @@
+C:\Users\greyb\Documents\GitHub\CSharp-Dungeon\DungeonO\DungeonO\bin\Debug\net8.0\DungeonO.exe
+C:\Users\greyb\Documents\GitHub\CSharp-Dungeon\DungeonO\DungeonO\bin\Debug\net8.0\DungeonO.deps.json
+C:\Users\greyb\Documents\GitHub\CSharp-Dungeon\DungeonO\DungeonO\bin\Debug\net8.0\DungeonO.runtimeconfig.json
+C:\Users\greyb\Documents\GitHub\CSharp-Dungeon\DungeonO\DungeonO\bin\Debug\net8.0\DungeonO.dll
+C:\Users\greyb\Documents\GitHub\CSharp-Dungeon\DungeonO\DungeonO\bin\Debug\net8.0\DungeonO.pdb
+C:\Users\greyb\Documents\GitHub\CSharp-Dungeon\DungeonO\DungeonO\obj\Debug\net8.0\DungeonO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\greyb\Documents\GitHub\CSharp-Dungeon\DungeonO\DungeonO\obj\Debug\net8.0\DungeonO.AssemblyInfoInputs.cache
+C:\Users\greyb\Documents\GitHub\CSharp-Dungeon\DungeonO\DungeonO\obj\Debug\net8.0\DungeonO.AssemblyInfo.cs
+C:\Users\greyb\Documents\GitHub\CSharp-Dungeon\DungeonO\DungeonO\obj\Debug\net8.0\DungeonO.csproj.CoreCompileInputs.cache
+C:\Users\greyb\Documents\GitHub\CSharp-Dungeon\DungeonO\DungeonO\obj\Debug\net8.0\DungeonO.dll
+C:\Users\greyb\Documents\GitHub\CSharp-Dungeon\DungeonO\DungeonO\obj\Debug\net8.0\refint\DungeonO.dll
+C:\Users\greyb\Documents\GitHub\CSharp-Dungeon\DungeonO\DungeonO\obj\Debug\net8.0\DungeonO.pdb
+C:\Users\greyb\Documents\GitHub\CSharp-Dungeon\DungeonO\DungeonO\obj\Debug\net8.0\DungeonO.genruntimeconfig.cache
+C:\Users\greyb\Documents\GitHub\CSharp-Dungeon\DungeonO\DungeonO\obj\Debug\net8.0\ref\DungeonO.dll
