@@ -9,6 +9,7 @@ namespace DungeonO
     internal class Unit
     {
         protected string _name;
+        protected string _type;
         protected int _health;
         protected int _maxHealth;
         protected int _damage;
@@ -63,6 +64,17 @@ namespace DungeonO
             get { return _damage; }
             set { _damage = value; }
         }
+
+        public string Type
+        {
+            get { return _type; }
+            set { _type = value; }
+        }
+
+        public int MaxHealth
+        {
+            get { return _maxHealth; }
+        }
     }
 
     class Slime : Unit
@@ -70,6 +82,7 @@ namespace DungeonO
 
         public Slime(string name) : base(name)
         {
+            _type = "slime";
             _damage = 1;
             _maxHealth = 3;
             _health = _maxHealth;
@@ -81,7 +94,7 @@ namespace DungeonO
 
         protected override void AttackMessage(Unit other)
         {
-            Console.WriteLine(_name + " the Slime, glorps all over you, it stings... grosss");
+            Console.WriteLine(_name + " the Slime, deals " + _damage + " damage to the player");
         }
     }
 
@@ -95,6 +108,20 @@ namespace DungeonO
             _health = _maxHealth;
         }
 
+        public string[] Actions = new[]
+        {
+            "Strike",
+            "Bite",
+            "Info",
+            "Run"
+        };
+
+        public void Bite(Unit other)
+        {
+            other.Hurt(Damage / 2);
+            Console.WriteLine("You take a chunk out of your enemy...");
+        }
+
         protected override void DeathMessage()
         {
             Console.WriteLine("You have been killed, how unfortunate...");
@@ -102,7 +129,7 @@ namespace DungeonO
 
         protected override void AttackMessage(Unit other)
         {
-            Console.WriteLine("You strike the " + other.Name + " with great force dealing " + Damage);
+            Console.WriteLine("You strike the " + other.Name + " with great force dealing " + Damage + " damage.");
         }
     }
 

@@ -1,0 +1,15 @@
+C:\Users\greyb\Documents\GitHub\DungeonO\DungeonO\bin\Release\net8.0\DungeonO.exe
+C:\Users\greyb\Documents\GitHub\DungeonO\DungeonO\bin\Release\net8.0\DungeonO.deps.json
+C:\Users\greyb\Documents\GitHub\DungeonO\DungeonO\bin\Release\net8.0\DungeonO.runtimeconfig.json
+C:\Users\greyb\Documents\GitHub\DungeonO\DungeonO\bin\Release\net8.0\DungeonO.dll
+C:\Users\greyb\Documents\GitHub\DungeonO\DungeonO\bin\Release\net8.0\DungeonO.pdb
+C:\Users\greyb\Documents\GitHub\DungeonO\DungeonO\obj\Release\net8.0\DungeonO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\greyb\Documents\GitHub\DungeonO\DungeonO\obj\Release\net8.0\DungeonO.AssemblyInfoInputs.cache
+C:\Users\greyb\Documents\GitHub\DungeonO\DungeonO\obj\Release\net8.0\DungeonO.AssemblyInfo.cs
+C:\Users\greyb\Documents\GitHub\DungeonO\DungeonO\obj\Release\net8.0\DungeonO.csproj.CoreCompileInputs.cache
+C:\Users\greyb\Documents\GitHub\DungeonO\DungeonO\obj\Release\net8.0\DungeonO.sourcelink.json
+C:\Users\greyb\Documents\GitHub\DungeonO\DungeonO\obj\Release\net8.0\DungeonO.dll
+C:\Users\greyb\Documents\GitHub\DungeonO\DungeonO\obj\Release\net8.0\refint\DungeonO.dll
+C:\Users\greyb\Documents\GitHub\DungeonO\DungeonO\obj\Release\net8.0\DungeonO.pdb
+C:\Users\greyb\Documents\GitHub\DungeonO\DungeonO\obj\Release\net8.0\DungeonO.genruntimeconfig.cache
+C:\Users\greyb\Documents\GitHub\DungeonO\DungeonO\obj\Release\net8.0\ref\DungeonO.dll
