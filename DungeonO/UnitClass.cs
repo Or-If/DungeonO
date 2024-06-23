@@ -22,21 +22,30 @@ namespace DungeonO
         //
         public void AttackOther(Unit other)
         {
-            other.Hurt(Damage);
             AttackMessage(other);
+            other.Hurt(Damage, false);
         }
 
-        public void Hurt(int amount)
+        public void Hurt(int amount, bool isEaten)
         {
             _health -= amount;
-            if (_health <= 0)
+
+            if (_health > 0) return;
+            if (isEaten)
             {
-                DeathMessage();
+                ConsumedMessage();
+                return;
             }
+            DeathMessage();
         }
 
         //
         protected virtual void DeathMessage()
+        {
+            Console.WriteLine("Some kind of death");
+        }
+
+        protected virtual void ConsumedMessage()
         {
             Console.WriteLine("Some kind of death");
         }
@@ -118,8 +127,8 @@ namespace DungeonO
 
         public void Bite(Unit other)
         {
-            other.Hurt(Damage / 2);
             Console.WriteLine("You take a chunk out of your enemy...");
+            other.Hurt(Damage, true); // Change back to a delayed amount of damage
         }
 
         protected override void DeathMessage()
@@ -129,7 +138,7 @@ namespace DungeonO
 
         protected override void AttackMessage(Unit other)
         {
-            Console.WriteLine("You strike the " + other.Name + " with great force dealing " + Damage + " damage.");
+            Console.WriteLine("You strike " + other.Name + " with great force dealing " + Damage + " damage.");
         }
     }
 

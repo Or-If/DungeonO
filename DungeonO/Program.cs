@@ -1,14 +1,16 @@
 ﻿using DungeonO;
 
-string _userName = Introduction();
-Player player = new Player(_userName);
-
+Player player = new Player(Introduction());
 Encounter introFight = new Encounter(player);
 
-Console.ReadLine();
+Console.ReadLine(); // This is here to pause the page before it closes.
 
-
-
+/* Encounter :
+ *  - Introduction
+ *  - Enemies to be generated
+ *  - 
+ * 
+*/
 
 static string Introduction()
 {

@@ -17,17 +17,24 @@ namespace DungeonO
         public Random gen = new Random(); // will be used for generatingslightly random room comps
         private int _enemyAmount;
         private static Unit[] enemies; // consists of an array of Enemy typed units that each is a object that has stats and such
+        private static string[] enemyDisplay;
 
         public Encounter(Player player)
         {
             EnemyGeneration();
             IntroductionToEncounter();
             Combat(player);
+            // some kind of reward for winning, plus end of fight dialogue.
         }
 
         private static void IntroductionToEncounter() // this will eventually change depending on room and encounter
         {
             Console.WriteLine("As you enter the room " + enemies.Length + " slimes ooze out a small barrel in the center of the otherwise blank empty room");
+            PagePause();
+        }
+
+        private static void PagePause()
+        {
             Console.WriteLine(">");
             Console.ReadLine();
         }
@@ -40,17 +47,19 @@ namespace DungeonO
                 DisplayEnemyInfo();
                 PlayerTurn(player);
                 EnemyTurn(player);
-            } while (EnemiesLeft() > 0);
+                PagePause();
+            } while (EnemiesLeft() >  0);
         }
 
         #region EnemyInfo
-        public void EnemyGeneration()
+        public void EnemyGeneration() // this will eventually be generated differently depending on what encounter we are at
         {
             Unit pinky = new Slime("Pinky");
             Unit poppy = new Slime("Bluey");
             Unit icarus = new Slime("Icarus");
             enemies = new Unit[] { pinky, poppy, icarus};
-            
+            enemyDisplay = new string[] { "pinky", "poppy", "icarus" };
+            _enemyAmount = enemies.Length;
         }
 
         public int EnemiesLeft()
@@ -100,6 +109,8 @@ namespace DungeonO
                     break;
                 case 2:
                     CombatInfo(player);
+                    PagePause();
+                    PlayerTurn(player);
                     break;
                 case 3:
                     RunFromCombat();
@@ -107,19 +118,18 @@ namespace DungeonO
                 default:
                     break;
             }
-            Console.WriteLine("WE HAVE REACHED THE END");
         }
 
-        private void AttackEnemy(player)
+        private void AttackEnemy(Player player)
         {
-            int enemyToAttack = MenuChoice(enemies);
-            player.AttackOther(enemyToAttack);
+            int enemyToAttack = MenuChoice(enemyDisplay);
+            player.AttackOther(enemies[enemyToAttack]);
         }
 
-        private void BiteEnemy(player)
+        private void BiteEnemy(Player player)
         {
-            int enemyToBite = MenuChoice(enemies);
-            player.Bite(enemyToBite);
+            int enemyToBite = MenuChoice(enemyDisplay);
+            player.Bite(enemies[enemyToBite]);
         }
 
         private void CombatInfo(Player player)
@@ -143,8 +153,9 @@ namespace DungeonO
         {
             Console.WriteLine("You have run from this fight, and live to never fight another...");
         }
+        #endregion
 
-        private int MenuChoice(String[] menuItems)
+        private int MenuChoice(string[] menuItems)
         {
             int previousLineIndex = -1;
             int selectedLineIndex = 0;
@@ -159,15 +170,13 @@ namespace DungeonO
  
                 pressedKey = Console.ReadKey().Key;
 
-                
-                if (pressedKey == ConsoleKey.DownArrow && selectedLineIndex + 1 < player.Actions.Length)
+                if (pressedKey == ConsoleKey.DownArrow && selectedLineIndex + 1 < menuItems.Length)
                     selectedLineIndex++;
                 else if (pressedKey == ConsoleKey.UpArrow && selectedLineIndex - 1 >= 0)
                     selectedLineIndex--;
                 
             } while (pressedKey != ConsoleKey.Enter);
 
-            Console.WriteLine($"{menuItems[selectedLineIndex]} was chosen");  // change this so that different outputs will happen based on what the player chooses
             return selectedLineIndex;
         }
 
@@ -175,17 +184,13 @@ namespace DungeonO
         {
             Console.Clear();
             DisplayEnemyInfo();
-
-            foreach (var item in menuItems) // I can make this choose either if menuItems
+            foreach (var item in menuItems)
             {
                 bool isSelected = item == menuItems[index];
                 if (isSelected)
                     DrawSelectedMenu(item);
-                else 
-                    Console.WriteLine($"  {item})
-                
-
-                Console.WriteLine($"{(isSelected ? ">  " : "   ")}{item})");
+                else
+                    Console.WriteLine($"  {item}");
             }
         }
 
@@ -197,9 +202,5 @@ namespace DungeonO
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
         }
-
-
-        #endregion
- 
     }
 }
